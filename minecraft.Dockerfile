@@ -19,7 +19,7 @@ RUN set -x \
  && apk add --no-cache openjdk8-jre-base \
 # Download the minecraft server and verify the SHA256 sum
  && wget https://launcher.mojang.com/v1/objects/${OBJECT}/server.jar \
- && echo "${SHA256} server.jar" | sha256sum -c
+ && echo "${SHA256}  server.jar" | sha256sum -c
 
 USER $UID:$GID
 WORKDIR $USERDIR
