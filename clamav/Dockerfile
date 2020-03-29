@@ -14,7 +14,8 @@ RUN set -x \
  && apk update \
  && apk add --no-cache supervisor clamav clamav-milter clamav-libunrar \
 # Entrypoint backwards compatability
- && ln -s usr/local/bin/docker-entrypoint.sh \
+ && ln -s /usr/local/bin/docker-entrypoint.sh \
+ && chmod 0777 /usr/local/bin/docker-entrypoint.sh \
 # Add diretory for socket
  && mkdir -p /run/clamav \ 
  && chown -R clamav:clamav /run/clamav \
