@@ -9,9 +9,9 @@ RUN set -x \
  && adduser -S -D -H -u $UID -s /sbin/nologin -G postfix -g postfix postfix \
 # Install postfix
  && apk update \
- && apk add --no-cache postfix postfix-pgsql postfixadmin
+ && apk add --no-cache postfix postfix-pgsql
 
-VOLUME /var/spool/mail /etc/postfix /etc/letsencrypt /usr/share/webapps/postfixadmin
+VOLUME /var/spool/mail /etc/postfix /etc/letsencrypt
 EXPOSE 25 465 587
 
 CMD ["/usr/sbin/postfix", "-c", "/etc/postfix", "start-fg"]
