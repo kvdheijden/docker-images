@@ -4,4 +4,5 @@ ADD https://raw.githubusercontent.com/mlocati/docker-php-extension-installer/mas
 
 RUN chmod uga+x /usr/local/bin/install-php-extensions \
  && sync \
- && install-php-extensions pgsql imap intl ldap gd imagick zip pdo_pgsql 
+ && install-php-extensions pgsql imap intl exif ldap gd imagick zip pdo_pgsql \
+ && pear install Auth_SASL Net_SMTP Net_IDNA2 Mail_mime Net_LDAP3
