@@ -15,9 +15,9 @@ RUN set -x \
  && adduser -D -h /home/vmail -u $VUID -s /sbin/nologin -G vmail -g vmail vmail \
 # Install dovecot
  && apk update \
- && apk add --no-cache dovecot dovecot-pgsql dovecot-lmtpd dovecot-pop3d
+ && apk add --no-cache dovecot dovecot-pgsql dovecot-pop3d
 
 VOLUME /home/vmail /etc/dovecot /etc/letsencrypt
-EXPOSE 24 110 143 993 995 12345
+EXPOSE 110 143 993 995 12345
 
 CMD ["/usr/sbin/dovecot", "-F", "-c", "/etc/dovecot/dovecot.conf"]
