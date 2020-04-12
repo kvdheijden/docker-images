@@ -12,7 +12,7 @@ RUN set -x \
  && apk add --no-cache rspamd
 
 USER rspamd
-VOLUME /etc/rspamd/local.d /etc/rspamd/override.d /etc/letsencrypt
+VOLUME /etc/rspamd/local.d /etc/rspamd/override.d
 EXPOSE 11332 11333 11334
 
 CMD ["/usr/sbin/rspamd", "-f", "-c", "/etc/rspamd/rspamd.conf"]
