@@ -9,7 +9,7 @@ RUN set -x \
  && adduser -S -D -H -u $UID -s /sbin/nologin -G rspamd -g rspamd rspamd \
 # Install rspamd
  && apk update \
- && apk add --no-cache rspamd
+ && apk add --no-cache rspamd rspamd-proxy rspamd-controller
 
 USER rspamd
 VOLUME /etc/rspamd/local.d /etc/rspamd/override.d
