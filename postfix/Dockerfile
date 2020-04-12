@@ -12,7 +12,7 @@ RUN set -x \
  && adduser -S -D -H -u $UID -s /sbin/nologin -G postfix -g postfix postfix \
 # Create vmail user and group
  && addgroup -g $VGID vmail \
- && adduser -D -h /home/vmail -u $UID -s /sbin/nologin -G vmail -g vmail vmail \
+ && adduser -D -h /home/vmail -u $VUID -s /sbin/nologin -G vmail -g vmail vmail \
 # Install postfix
  && apk update \
  && apk add --no-cache postfix postfix-pgsql
